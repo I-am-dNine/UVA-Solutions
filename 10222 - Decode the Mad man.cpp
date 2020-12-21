@@ -1,23 +1,21 @@
 #include<stdio.h>
 #include<ctype.h>
-
 int main(){
-	char str[]="qwertyuiop[]asdfghjkl;'\zxcvbnm,./'";
-	char a;
+	char key[]="`1234567890-=qwertyuiop[]\\asdfghjkl;'zxcvbnm,./";
+	char s;
 	
-	while(scanf("%c",&a)!= EOF){
-		a = tolower(a);
-		
-		if(isspace(a))printf(" ");
-		else
-		{
-			for(int i=0;str[i];i++){		//use loop find until get the word then -2 for the decode
-				if(a==str[i]){
-					printf("%c",str[i-2]);
-					break;
+	while(scanf("%c",&s)!=EOF){
+		s=tolower(s);
+		if(s==' ' || s=='\n'){
+			printf("%c",s);
+		}else{
+			for(int i=0;key[i];i++){
+				if(s==key[i]){
+					printf("%c",key[i-2]);
 				}
 			}
 		}
 	}
+	
 	return 0;
 }

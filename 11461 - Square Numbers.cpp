@@ -1,17 +1,24 @@
 #include<stdio.h>
+#include<math.h>
 
 int main(){
-	int a,b,i,sum=0;
+	int a,b,sq,i;
 	
-	while(scanf("%d  %d",&a,&b)&& a!=0 && b!=0){
-		int temp =0;
-		for(i=1;i<=b;i++){
-			sum =i*i;
-			if(sum<=b){
-				temp++;
+	while(scanf("%d %d",&a,&b)){
+		int cnt=0;
+		if(a == 0 && b == 0) {
+			break;
+		}
+		
+		for(i=a;i<=b;i++){
+			sq =sqrt(i);
+			if(sq*sq ==i){
+				cnt++;
 			}
 		}
-		printf("%d\n",temp);
+		printf("%d\n",cnt);
+		
 	}
+	
 	return 0;
 }
